@@ -26,11 +26,7 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void getPosts() {
 
-        try {
-            postRepository.getPosts().execute();
-        } catch (IOException  exception){
-            Log.e("ERROR", exception.toString());
-        }
+
 
         postRepository.getPosts().enqueue(new Callback<List<Post>>() {
             @Override
